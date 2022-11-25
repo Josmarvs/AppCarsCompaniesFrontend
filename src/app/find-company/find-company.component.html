@@ -1,0 +1,59 @@
+<br/>
+<h2>Search Company</h2>
+<br/>
+<div>
+  <form class="row g-3" (ngSubmit)="searchCompanyById()">
+    <div class="col-auto">
+      <label class="form-control-plaintext" for="id">Id :</label>
+    </div>
+    <div class="col-auto">
+      <input type="text" class="form-control" id="id"
+             name="id" required [(ngModel)]="id" placeholder="Search Company by Id" />
+    </div>
+    <div class="col-auto">
+      <button type="submit" class="btn btn-success">Search</button>
+    </div>
+  </form>
+</div>
+<br/>
+<div>
+  <form class="row g-3" (ngSubmit)="searchCompanyByName()">
+    <div class="col-auto">
+      <label class="form-control-plaintext" for="name">Name :</label>
+    </div>
+    <div class="col-auto">
+      <input type="text" class="form-control" id="name"
+             name="name" required [(ngModel)]="name" placeholder="Search Company by Name" />
+    </div>
+    <div class="col-auto">
+      <button type="submit" class="btn btn-success">Search</button>
+    </div>
+  </form>
+</div>
+<br/>
+<div>
+  <form class="row g-3" (ngSubmit)="searchCompanyByCity()">
+    <div class="col-auto">
+      <label class="form-control-plaintext" for="city">City :</label>
+    </div>
+    <div class="col-auto">
+      <input type="text" class="form-control" id="city"
+             name="city" required [(ngModel)]="city" placeholder="Search Company by City" />
+    </div>
+    <div class="col-auto">
+      <button type="submit" class="btn btn-success">Search</button>
+    </div>
+  </form>
+</div>
+<br/>
+<ul>
+  <li *ngIf="company">
+    <h4>{{ company.id }} - {{ company.name }} {{ company.city }} - {{company.ruc}}</h4>
+  </li>
+</ul>
+<ul>
+  <li *ngFor="let company of companies">
+    <h4>{{ company.id }} - {{ company.name }} {{ company.city }} - {{company.ruc}}</h4>
+  </li>
+</ul>
+

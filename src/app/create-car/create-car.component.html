@@ -1,0 +1,57 @@
+<br/>
+<h2>Registro de Cars</h2>
+
+<br/>
+<div>
+    <form (ngSubmit)="(insertCar())">
+        <div>
+            <input type="hidden" id="FarmerId" name="FarmerId"
+            required [(ngModel)]="car.id">
+        </div>
+
+      <div class="mb-3">
+        <label for="name">Name :</label>
+        <input type="text" class="form-control" id="name"
+               name= "name" placeholder="Name"
+               required [(ngModel)]="car.name" />
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="model">Model :</label>
+        <input type="text" class="form-control" id="model"
+               name= "model" placeholder="Model"
+               required [(ngModel)]="car.model" />
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="create_at">Create At :</label>
+        <input type="text" class="form-control" id="create_at"
+               name="create_at" placeholder="createAt"
+               required [(ngModel)]="car.create_at" />
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="height">Height :</label>
+        <input type="text" class="form-control" id="height"
+               name="height" placeholder="Height"
+               required [(ngModel)]="car.height" />
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="weight">Weight :</label>
+        <input type="text" class="form-control" id="weight"
+               name="weight" placeholder="Weight"
+               required [(ngModel)]="car.weight" />
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="company_id">Company Id :</label>
+        <input type="text" class="form-control" id="company_id"
+               name="company_id" placeholder="companyId"
+               required [(ngModel)]="car.company_id" />
+      </div>
+
+        <button type="submit" class ="btn btn-success">Save</button>
+
+    </form>
+</div>

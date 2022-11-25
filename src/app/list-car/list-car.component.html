@@ -1,0 +1,33 @@
+<br/>
+<h2>Listado de Cars</h2>
+<br/>
+<br/>
+<table class="table table-striped">
+    <thead class="thead_dark">
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Name</th>
+          <th scope="col">Create At</th>
+          <th scope="col">Height</th>
+          <th scope="col">Weight</th>
+          <th scope="col">CompanyID</th>
+        </tr>
+    </thead>
+    <tbody>
+    <ng-container *ngFor="let car of cars">
+      <tr>
+        <th scope="row">{{ car.id }}</th>
+        <td>{{car.name}}</td>
+        <td>{{car.create_at}}</td>
+        <td>{{car.height}}</td>
+        <td>{{car.weight}}</td>
+        <td>{{car.company_id}}</td>
+        <td>
+          <button type="submit" (click)='deleteCar(car)' class="btn btn-danger">Delete</button>
+          <button type="submit" (click)='updateCar(car)' class="btn btn-primary">Update</button>
+        </td>
+      </tr>
+    </ng-container>
+    </tbody>
+</table>
+

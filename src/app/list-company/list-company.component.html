@@ -1,0 +1,49 @@
+<br/>
+<h2>Listado de Companies</h2>
+<br/>
+<div>
+  <form class="row g-3" (ngSubmit)="searchCompanyByName()">
+    <div class="col-auto">
+      <label class="form-control-plaintext" for="name">Name :</label>
+    </div>
+    <div class="col-auto">
+      <input type="text" class="form-control" id="name"
+             name="name" required [(ngModel)]="name" placeholder="Search Company" />
+    </div>
+    <div class="col-auto">
+      <button type="submit" class="btn btn-success">Search</button>
+    </div>
+  </form>
+</div>
+<br/>
+<table class="table table-striped">
+  <thead class="thead_dark">
+  <tr>
+    <th scope="col">Id</th>
+    <th scope="col">Name</th>
+    <th scope="col">RUC</th>
+    <th scope="col">Address</th>
+    <th scope="col">Contry</th>
+    <th scope="col">City</th>
+    <th scope="col">Email</th>
+  </tr>
+  </thead>
+  <tbody>
+  <ng-container *ngFor="let company of companies">
+    <tr>
+      <th scope="row">{{ company.id }}</th>
+      <td>{{company.name}}</td>
+      <td>{{company.ruc}}</td>
+      <td>{{company.address}}</td>
+      <td>{{company.contry}}</td>
+      <td>{{company.city}}</td>
+      <td>{{company.email}}</td>
+      <td>
+        <button type="submit" (click)='deleteCompany(company)' class="btn btn-danger">Delete</button>
+        <button type="submit" (click)='updateCompany(company)' class="btn btn-primary">Update</button>
+      </td>
+    </tr>
+  </ng-container>
+  </tbody>
+</table>
+

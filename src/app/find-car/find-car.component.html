@@ -1,0 +1,58 @@
+<br/>
+<h2>Search Car</h2>
+<br/>
+<div>
+    <form class="row g-3" (ngSubmit)="searchCarById()">
+        <div class="col-auto">
+            <label class="form-control-plaintext" for="id">Id :</label>
+        </div>
+        <div class="col-auto">
+            <input type="text" class="form-control" id="id"
+            name="id" required [(ngModel)]="id" placeholder="Search Cars by Id" />
+        </div>
+        <div class="col-auto">
+            <button type="submit" class="btn btn-success">Search</button>
+        </div>
+    </form>
+</div>
+<br/>
+<div>
+  <form class="row g-3" (ngSubmit)="searchCarByName()">
+    <div class="col-auto">
+      <label class="form-control-plaintext" for="name">Name :</label>
+    </div>
+    <div class="col-auto">
+      <input type="text" class="form-control" id="name"
+             name="name" required [(ngModel)]="name" placeholder="Search Car by Name" />
+    </div>
+    <div class="col-auto">
+      <button type="submit" class="btn btn-success">Search</button>
+    </div>
+  </form>
+</div>
+<br/>
+<div>
+  <form class="row g-3" (ngSubmit)="searchCarByModel()">
+    <div class="col-auto">
+      <label class="form-control-plaintext" for="model">Model :</label>
+    </div>
+    <div class="col-auto">
+      <input type="text" class="form-control" id="model"
+             name="model" required [(ngModel)]="name" placeholder="Search Car by Model" />
+    </div>
+    <div class="col-auto">
+      <button type="submit" class="btn btn-success">Search</button>
+    </div>
+  </form>
+</div>
+<br/>
+<ul>
+  <li *ngIf="car">
+    <h4>{{ car.id }} - {{ car.name }} {{ car.model }} - {{car.create_at}}</h4>
+  </li>
+</ul>
+<ul>
+  <li *ngFor="let car of cars">
+    <h4>{{ car.id }} - {{ car.name }} {{ car.model }} - {{car.create_at}}</h4>
+  </li>
+</ul>
